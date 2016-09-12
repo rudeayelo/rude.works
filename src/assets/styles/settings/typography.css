@@ -1,0 +1,9 @@
+:root {
+  --ff-sans: 'Source Sans Pro','Helvetica Neue', Arial, sans;
+
+  --fz-base: 1.1em;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 500;
+}

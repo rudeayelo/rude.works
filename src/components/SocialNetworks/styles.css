@@ -1,0 +1,38 @@
+@import '../../assets/styles/settings/colors.css';
+@import '../../assets/styles/settings/typography.css';
+
+.social {
+  composes: relative from 'basscss/css/basscss.css';
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4em;
+    height: 2px;
+    background: var(--grey);
+  }
+}
+
+.heading {
+  composes: block from 'basscss/css/basscss.css';
+  padding-top: 1.5em;
+  padding-bottom: 0.55em;
+  font-size: 12px;
+  color: var(--grey-light);
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+}
+
+.list {
+  composes: flex list-reset m0 from 'basscss/css/basscss.css';
+}
+
+.item {
+  composes: inline-block mr2 from 'basscss/css/basscss.css';
+}
+
+.link {
+  composes: fz-base fw-bold from '../../assets/styles/tools/typography.css';
+}

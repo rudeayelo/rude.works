@@ -1,0 +1,9 @@
+@import '../../assets/styles/settings/mediaqueries.css';
+
+.logo {
+  filter: drop-shadow(0 2.5em 4em rgba(0,0,0,.4));
+
+  @media (--mq-s) {
+    padding-right: 3em;
+  }
+}

@@ -1,0 +1,13 @@
+:root {
+  --mq-w-s: 35rem;
+  --mq-w-m: 48rem;
+  --mq-w-l: 64rem;
+  --mq-w-xl: 75rem;
+  --mq-w-xxl: 90rem;
+
+  @custom-media --mq-s (width >= 35rem);
+  @custom-media --mq-m (width >= 48rem);
+  @custom-media --mq-l (width >= 64rem);
+  @custom-media --mq-xl (width >= 75rem);
+  @custom-media --mq-xxl (width >= 90rem);
+}

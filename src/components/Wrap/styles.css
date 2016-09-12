@@ -1,0 +1,10 @@
+@import '../../assets/styles/settings/grid.css';
+
+.base {
+  composes: flex px3 from 'basscss/css/basscss.css';
+  max-width: var(--wrap-max-width);
+}
+
+.center {
+  composes: mx-auto from 'basscss/css/basscss.css';
+}

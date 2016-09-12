@@ -1,0 +1,9 @@
+@import '../settings/typography.css';
+
+.fz-base {
+  font-size: var(--fz-base);
+}
+
+.fw-bold {
+  font-weight: var(--fw-semibold);
+}
