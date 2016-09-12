@@ -155,7 +155,6 @@ module.exports = {
     configFile: path.join(__dirname, 'eslint.js'),
     useEslintrc: false
   },
-  // We use PostCSS for autoprefixing only.
   postcss: function(webpack) {
     return [
       postcssUse({

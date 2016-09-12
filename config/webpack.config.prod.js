@@ -1,11 +1,16 @@
 var path = require('path');
-var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
 var env = require('./env');
+
+// PostCSS
+var postcssImport = require('postcss-import')
+var postcssUse = require('postcss-use')
+var postcssAssets = require('postcss-assets')
+var postcssCSSNext = require('postcss-cssnext')
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
@@ -106,7 +111,7 @@ module.exports = {
         // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
         // including CSS. This is confusing and will be removed in Webpack 2:
         // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
+        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]!postcss')
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
@@ -162,18 +167,38 @@ module.exports = {
     configFile: path.join(__dirname, 'eslint.js'),
     useEslintrc: false
   },
-  // We use PostCSS for autoprefixing only.
-  postcss: function() {
+  postcss: function(webpack) {
     return [
-      autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
+      postcssUse({
+        modules: [
+          'lost'
         ]
       }),
-    ];
+      postcssImport({
+        addDependencyTo: webpack,
+        path: [
+          paths.appNodeModules,
+          paths.appSrc + '/assets/styles',
+        ],
+      }),
+      postcssAssets({
+        loadPaths: [
+          paths.appSrc + '/assets/images',
+          paths.appSrc + '/assets/fonts',
+        ]
+      }),
+      postcssCSSNext({
+        browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1',
+        features: {
+          customProperties: {
+            preserve: false
+          },
+          customMedia: {
+            preserve: false
+          }
+        }
+      })
+    ]
   },
   plugins: [
     // Generates an `index.html` file with the <script> injected.
