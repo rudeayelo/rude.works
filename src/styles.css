@@ -1,7 +1,7 @@
 /* Generic / Reset */
-@import "sanitize.css";
-@import "generic/layout-reset.css";
+@import 'sanitize.css';
+@import 'generic/layout-reset.css';
 
 /* Base */
-@import "base/font-face.css";
-@import "base/typography-defaults.css";
+@import 'base/font-face.css';
+@import 'base/typography-defaults.css';

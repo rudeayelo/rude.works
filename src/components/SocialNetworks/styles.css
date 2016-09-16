@@ -1,5 +1,5 @@
-@import '../../assets/styles/settings/colors.css';
-@import '../../assets/styles/settings/typography.css';
+@import 'settings/colors.css';
+@import 'settings/typography.css';
 
 .social {
   composes: relative from 'basscss/css/basscss.css';
@@ -34,5 +34,5 @@
 }
 
 .link {
-  composes: fz-base fw-bold from '../../assets/styles/tools/typography.css';
+  composes: fz-base fw-bold from 'tools/typography.css';
 }

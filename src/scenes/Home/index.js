@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import styles from './styles.css'
-import Logo from '../../components/Logo'
-import Wrap from '../../components/Wrap'
-import SocialNetworks from '../../components/SocialNetworks'
-import content from '../../services/Contentful'
+import Logo from 'components/Logo'
+import Wrap from 'components/Wrap'
+import SocialNetworks from 'components/SocialNetworks'
+import content from 'services/Contentful'
 
 class Home extends Component {
   state = {

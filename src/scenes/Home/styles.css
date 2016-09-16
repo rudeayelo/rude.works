@@ -1,7 +1,7 @@
-@import '../../assets/styles/settings/colors.css';
-@import '../../assets/styles/settings/mediaqueries.css';
-@import '../../assets/styles/settings/grid.css';
-@import '../../assets/styles/settings/typography.css';
+@import 'settings/colors.css';
+@import 'settings/mediaqueries.css';
+@import 'settings/grid.css';
+@import 'settings/typography.css';
 
 body {
   background: var(--blue-darkest);
@@ -34,7 +34,7 @@ body {
 
 .intro,
 .data {
-  composes: fz-base from '../../assets/styles/tools/typography.css';
+  composes: fz-base from 'tools/typography.css';
   composes: inline from 'basscss/css/basscss.css';
   color: var(--grey-light);
   font-weight: var(--fw-regular);

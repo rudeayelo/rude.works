@@ -1,4 +1,4 @@
-@import '../../assets/styles/settings/grid.css';
+@import 'settings/grid.css';
 
 .base {
   composes: flex px3 from 'basscss/css/basscss.css';

@@ -61,12 +61,20 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
+    // Adds the possibility to import components from the /src folder just like
+    // if they were in node_modules:
+    // require('components/Btn') resolves to './src/components/Btn/index.js'
+    root: paths.appSrc,
     // These are the reasonable defaults supported by the Node ecosystem.
     extensions: ['.js', '.json', ''],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web'
+      'react-native': 'react-native-web',
+      // Custom aliases
+      fonts: paths.appSrc + '/assets/fonts',
+      settings: paths.appSrc + '/assets/styles/settings',
+      tools: paths.appSrc + '/assets/styles/tools',
     }
   },
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
