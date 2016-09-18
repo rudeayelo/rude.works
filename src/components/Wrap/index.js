@@ -1,25 +1,23 @@
 import React, { Component, PropTypes } from 'react'
-import classNames from 'classnames/bind'
-import styles from './styles.css'
-
-let cn = classNames.bind(styles);
+import classNames from 'classnames'
+import styles from './styles'
 
 export default class Wrap extends Component {
-  static defaultProps = {
-    center: true
-  }
   static propTypes = {
     center: PropTypes.bool,
   }
+  static defaultProps = {
+    center: true
+  }
 
   render () {
-    const wrapClasses = cn({
-      base: true,
-      center: this.props.center,
+    const wrapClasses = classNames({
+      [styles.base]: true,
+      [styles.center]: this.props.center,
     })
 
     return (
-      <div className={ wrapClasses }>
+      <div className={ styles }>
         { this.props.children }
       </div>
     )
