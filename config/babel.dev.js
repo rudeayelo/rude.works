@@ -30,6 +30,8 @@ module.exports = {
       // Resolve the Babel runtime relative to the config.
       // You can safely remove this after ejecting:
       moduleName: path.dirname(require.resolve('babel-runtime/package'))
-    }]
+    }],
+    // React CXS
+    [require.resolve('babel-plugin-transform-react-jsx'), { pragma: 'reactCxs' }],
   ]
 };

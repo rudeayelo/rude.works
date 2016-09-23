@@ -1,8 +1,0 @@
-:root {
-  @use lost;
-  @lost gutter 2rem;
-  @lost flexbox flex;
-  @lost cycle none;
-
-  --wrap-max-width: 50rem;
-}

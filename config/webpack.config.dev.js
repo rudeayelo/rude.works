@@ -6,12 +6,6 @@ var WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNodeMo
 var paths = require('./paths')
 var env = require('./env')
 
-// PostCSS
-var postcssImport = require('postcss-import')
-var postcssUse = require('postcss-use')
-var postcssAssets = require('postcss-assets')
-var postcssCSSNext = require('postcss-cssnext')
-
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -66,15 +60,12 @@ module.exports = {
     // require('components/Btn') resolves to './src/components/Btn/index.js'
     root: paths.appSrc,
     // These are the reasonable defaults supported by the Node ecosystem.
-    extensions: ['.js', '.json', ''],
+    extensions: ['.js', '.json', '.css', ''],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-      // Custom aliases
-      fonts: paths.appSrc + '/assets/fonts',
-      settings: paths.appSrc + '/assets/styles/settings',
-      tools: paths.appSrc + '/assets/styles/tools',
+      'sanitize.css': paths.ownNodeModules + '/sanitize.css/sanitize.css'
     }
   },
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
@@ -109,7 +100,7 @@ module.exports = {
       // in development "style" loader enables hot editing of CSS.
       {
         test: /\.css$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]!postcss',
+        loader: 'style!css!postcss',
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -163,39 +154,6 @@ module.exports = {
     configFile: path.join(__dirname, 'eslint.js'),
     useEslintrc: false
   },
-  postcss: function(webpack) {
-    return [
-      postcssUse({
-        modules: [
-          'lost'
-        ]
-      }),
-      postcssImport({
-        addDependencyTo: webpack,
-        path: [
-          paths.appNodeModules,
-          paths.appSrc + '/assets/styles',
-        ],
-      }),
-      postcssAssets({
-        loadPaths: [
-          paths.appSrc + '/assets/images',
-          paths.appSrc + '/assets/fonts',
-        ]
-      }),
-      postcssCSSNext({
-        browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1',
-        features: {
-          customProperties: {
-            preserve: false
-          },
-          customMedia: {
-            preserve: false
-          }
-        }
-      })
-    ]
-  },
   plugins: [
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -215,6 +173,10 @@ module.exports = {
     // to restart the development server for Webpack to discover it. This plugin
     // makes the discovery automatic so you don't have to restart.
     // See https://github.com/facebookincubator/create-react-app/issues/186
-    new WatchMissingNodeModulesPlugin(paths.appNodeModules)
+    new WatchMissingNodeModulesPlugin(paths.appNodeModules),
+    // React CXS
+    new webpack.ProvidePlugin({
+      reactCxs: 'react-cxs'
+    }),
   ]
 }

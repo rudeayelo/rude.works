@@ -6,12 +6,6 @@ var url = require('url');
 var paths = require('./paths');
 var env = require('./env');
 
-// PostCSS
-var postcssImport = require('postcss-import')
-var postcssUse = require('postcss-use')
-var postcssAssets = require('postcss-assets')
-var postcssCSSNext = require('postcss-cssnext')
-
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
 if (env['process.env.NODE_ENV'] !== '"production"') {
@@ -56,12 +50,17 @@ module.exports = {
     publicPath: publicPath
   },
   resolve: {
+    // Adds the possibility to import components from the /src folder just like
+    // if they were in node_modules:
+    // require('components/Btn') resolves to './src/components/Btn/index.js'
+    root: paths.appSrc,
     // These are the reasonable defaults supported by the Node ecosystem.
     extensions: ['.js', '.json', ''],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web'
+      'react-native': 'react-native-web',
+      'sanitize.css': paths.ownNodeModules + '/sanitize.css/sanitize.css',
     }
   },
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
@@ -111,7 +110,7 @@ module.exports = {
         // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
         // including CSS. This is confusing and will be removed in Webpack 2:
         // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]!postcss')
+        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer')
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
@@ -167,39 +166,6 @@ module.exports = {
     configFile: path.join(__dirname, 'eslint.js'),
     useEslintrc: false
   },
-  postcss: function(webpack) {
-    return [
-      postcssUse({
-        modules: [
-          'lost'
-        ]
-      }),
-      postcssImport({
-        addDependencyTo: webpack,
-        path: [
-          paths.appNodeModules,
-          paths.appSrc + '/assets/styles',
-        ],
-      }),
-      postcssAssets({
-        loadPaths: [
-          paths.appSrc + '/assets/images',
-          paths.appSrc + '/assets/fonts',
-        ]
-      }),
-      postcssCSSNext({
-        browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1',
-        features: {
-          customProperties: {
-            preserve: false
-          },
-          customMedia: {
-            preserve: false
-          }
-        }
-      })
-    ]
-  },
   plugins: [
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -242,6 +208,10 @@ module.exports = {
       }
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin('static/css/[name].[contenthash:8].css')
+    new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
+    // React CXS
+    new webpack.ProvidePlugin({
+      reactCxs: 'react-cxs'
+    }),
   ]
 };

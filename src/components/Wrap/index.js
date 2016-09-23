@@ -1,27 +1,31 @@
 import React, { Component, PropTypes } from 'react'
-import classNames from 'classnames/bind'
-import styles from './styles.css'
-
-let cn = classNames.bind(styles);
+import prefix from 'inline-style-prefixer/static'
+import { wrap } from 'styles/config'
 
 export default class Wrap extends Component {
-  static defaultProps = {
-    center: true
-  }
-  static propTypes = {
-    center: PropTypes.bool,
-  }
-
   render () {
-    const wrapClasses = cn({
-      base: true,
-      center: this.props.center,
+    const cx = prefix({
+      display: 'flex',
+      paddingLeft: '2em',
+      paddingRight: '2em',
+      maxWidth: wrap.maxWidth,
     })
+    const center = this.props.center && { margin: '0 auto' }
+    const sx = {
+      ...center,
+    }
 
     return (
-      <div className={ wrapClasses }>
+      <div className={ cx } style={ sx }>
         { this.props.children }
       </div>
     )
   }
+}
+
+Wrap.propTypes = {
+  center: PropTypes.bool,
+}
+Wrap.defaultProps = {
+  center: true
 }

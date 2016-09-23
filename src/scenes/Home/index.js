@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import styles from './styles.css'
 import Logo from 'components/Logo'
 import Wrap from 'components/Wrap'
 import SocialNetworks from 'components/SocialNetworks'
 import content from 'services/Contentful'
+import styles from './styles'
 
 class Home extends Component {
   state = {
@@ -55,9 +55,9 @@ class Home extends Component {
         <div className={ styles.content }>
           <Logo/>
 
-          <div className={ styles.main}>
+          <div className={ styles.main }>
             { this.state.isFetching
-                ? <span className={ styles.data }>Loading...</span>
+                ? <span className='data'>Loading...</span>
                 : this.renderBody() }
 
             <SocialNetworks/>
