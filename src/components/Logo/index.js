@@ -1,18 +1,25 @@
 import React from 'react'
-import logo from './logo.png'
-import prefix from 'inline-style-prefixer/static'
+import useSheet from 'react-jss'
 import { breakpoints } from 'styles/config'
+import logo from './logo.png'
 
-const cx = prefix({
-  filter: 'drop-shadow(0 2.5em 4em rgba(0,0,0,.4))',
-  [breakpoints.s]: {
-    paddingRight: '3em',
-  },
-})
+const styles = {
+  logo: {
+    filter: 'drop-shadow(0 2.5em 4em rgba(0,0,0,.4))',
+    [breakpoints.s]: {
+      paddingRight: 3,
+    },
+  }
+}
 
-const Logo = (props) =>
-  <div className={ cx }>
-    <img src={ logo } width='249' role='presentation'/>
-  </div>
+const Logo = (props) => {
+  const { classes } = props.sheet
 
-export default Logo
+  return (
+    <div className={ classes.logo }>
+      <img src={ logo } width='249' role='presentation'/>
+    </div>
+  )
+}
+
+export default useSheet(Logo, styles)

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import useSheet from 'react-jss'
 import Logo from 'components/Logo'
 import Wrap from 'components/Wrap'
 import SocialNetworks from 'components/SocialNetworks'
@@ -6,9 +7,12 @@ import content from 'services/Contentful'
 import styles from './styles'
 
 class Home extends Component {
-  state = {
-    isFetching: true,
-    status: '',
+  constructor () {
+    super()
+    this.state = {
+      isFetching: true,
+      status: '',
+    }
   }
 
   getRandomStatus = () => {
@@ -33,13 +37,15 @@ class Home extends Component {
   }
 
   renderBody = () => {
+    const { classes } = this.props.sheet
+
     return (
-      <div className={ styles.body }>
-        <h1 className={ styles.intro }>
+      <div className={ classes.body }>
+        <h1 className={ classes.intro }>
           <strong>Hello</strong>, my name is <strong>Rude</strong>.
         </h1>
         { ' ' }
-        <p className={ styles.data }>
+        <p className={ classes.data }>
           I work at XING as a <strong>frontend engineer</strong> (although
           I've spent more time working as a <strong>graphic designer</strong>)
           { this.state.status }
@@ -50,14 +56,16 @@ class Home extends Component {
   }
 
   render () {
+    const { classes } = this.props.sheet
+
     return (
       <Wrap>
-        <div className={ styles.content }>
+        <div className={ classes.content }>
           <Logo/>
 
-          <div className={ styles.main }>
+          <div className={ classes.main }>
             { this.state.isFetching
-                ? <span className='data'>Loading...</span>
+                ? <span className={ classes.data }>Loading...</span>
                 : this.renderBody() }
 
             <SocialNetworks/>
@@ -68,4 +76,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default useSheet(Home, styles)

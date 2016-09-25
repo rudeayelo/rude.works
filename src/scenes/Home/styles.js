@@ -1,7 +1,6 @@
-import prefix from 'inline-style-prefixer/static'
 import { colors, breakpoints, font } from 'styles/config'
 
-const styles = prefix({
+const styles = {
   content: {
     display: 'flex',
     flexDirection: 'column',
@@ -36,6 +35,6 @@ const styles = prefix({
     fontWeight: font.weight.regular,
     color: colors.greyLight,
   },
-})
+}
 
 export default styles
