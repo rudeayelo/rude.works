@@ -1,4 +1,4 @@
-import { colors, breakpoints, font } from 'styles/config'
+import { breakpoints, font } from 'styles/config'
 
 const styles = {
   content: {
@@ -14,7 +14,7 @@ const styles = {
   main: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     flex: 1,
   },
   body: {
@@ -27,13 +27,11 @@ const styles = {
     display: 'inline',
     fontSize: font.size.base,
     fontWeight: font.weight.regular,
-    color: colors.greyLight,
   },
   data: {
     display: 'inline',
     fontSize: font.size.base,
     fontWeight: font.weight.regular,
-    color: colors.greyLight,
   },
 }
 

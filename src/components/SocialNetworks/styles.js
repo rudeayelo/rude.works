@@ -10,7 +10,7 @@ const styles = {
       left: 0,
       width: 4,
       height: '2px',
-      background: colors.grey,
+      background: colors.greyLighter,
     },
   },
   heading: {
@@ -18,7 +18,7 @@ const styles = {
     paddingTop: 1.5,
     paddingBottom: 0.55,
     fontSize: 0.8,
-    color: colors.greyLight,
+    color: colors.blueDarkest,
     textTransform: 'uppercase',
     fontWeight: font.weight.semibold,
   },
@@ -34,7 +34,6 @@ const styles = {
   },
   link: {
     fontSize: font.size.base,
-    color: colors.blue
   },
 }
 

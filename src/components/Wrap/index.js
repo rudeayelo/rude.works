@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import useSheet from 'react-jss'
+import injectSheet from 'styles/jss'
 import classNames from 'classnames'
 import { wrap } from 'styles/config'
 
@@ -36,4 +36,4 @@ Wrap.defaultProps = {
   center: true
 }
 
-export default useSheet(Wrap, styles)
+export default injectSheet(styles)(Wrap)

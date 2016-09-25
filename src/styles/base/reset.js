@@ -1,4 +1,4 @@
-import jss from 'jss'
+import { jss } from 'styles/jss'
 
 jss.createStyleSheet({
   '*, *::after, *::before': {

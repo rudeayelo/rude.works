@@ -1,5 +1,5 @@
 import React from 'react'
-import useSheet from 'react-jss'
+import injectSheet from 'styles/jss'
 import styles from './styles'
 
 const SocialNetworks = (props) => {
@@ -26,4 +26,4 @@ const SocialNetworks = (props) => {
   )
 }
 
-export default useSheet(SocialNetworks, styles)
+export default injectSheet(styles)(SocialNetworks)

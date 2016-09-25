@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import useSheet from 'react-jss'
+import injectSheet from 'styles/jss'
 import Logo from 'components/Logo'
 import Wrap from 'components/Wrap'
 import SocialNetworks from 'components/SocialNetworks'
@@ -76,4 +76,4 @@ class Home extends Component {
   }
 }
 
-export default useSheet(Home, styles)
+export default injectSheet(styles)(Home)

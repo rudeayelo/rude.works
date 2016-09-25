@@ -1,9 +1,11 @@
-import jss from 'jss'
+import { create as createJss } from 'jss'
+import { create as createInjectSheet  } from 'react-jss'
 import nested from 'jss-nested'
 import camelCase from 'jss-camel-case'
 import defaultUnit from 'jss-default-unit'
 import vendorPrefixer from 'jss-vendor-prefixer'
 
+export const jss = createJss()
 jss.use(
   nested(),
   camelCase(),
@@ -25,3 +27,7 @@ jss.use(
   }),
   vendorPrefixer()
 )
+
+const injectSheet = createInjectSheet(jss)
+
+export default injectSheet

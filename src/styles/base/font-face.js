@@ -1,4 +1,4 @@
-import jss from 'jss'
+import { jss } from 'styles/jss'
 import LightWoff from 'styles/fonts/SourceSansPro-Light.woff'
 import LightWoff2 from 'styles/fonts/SourceSansPro-Light.woff'
 import RegularWoff from 'styles/fonts/SourceSansPro-Regular.woff'
