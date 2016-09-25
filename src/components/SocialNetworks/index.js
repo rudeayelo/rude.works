@@ -10,16 +10,16 @@ const SocialNetworks = (props) => {
       <span className={ classes.heading }>Find me on</span>
       <ul className={ classes.list }>
         <li className={ classes.item }>
-          <a href='http://twitter.com/Rude' className={ classes.link }>Twitter</a>
+          <a href='http://rude.at/twitter' className={ classes.link }>Twitter</a>
         </li>
         <li className={ classes.item }>
-          <a href='http://dribbble.com/Rude' className={ classes.link }>Dribbble</a>
+          <a href='http://rude.at/dribbble' className={ classes.link }>Dribbble</a>
         </li>
         <li className={ classes.item }>
-          <a href='https://xing.com/profile/Rude_Ayelo' className={ classes.link }>XING</a>
+          <a href='http://rude.at/xing' className={ classes.link }>XING</a>
         </li>
         <li className={ classes.item }>
-          <a href='https://linkedin.com/in/rudeayelo' className={ classes.link }>Linkedin</a>
+          <a href='http://rude.at/linkedin' className={ classes.link }>Linkedin</a>
         </li>
       </ul>
     </footer>

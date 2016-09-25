@@ -3,32 +3,21 @@ import injectSheet from 'styles/jss'
 import Logo from 'components/Logo'
 import Wrap from 'components/Wrap'
 import SocialNetworks from 'components/SocialNetworks'
-import content from 'services/Contentful'
 import styles from './styles'
 
 class Home extends Component {
   constructor () {
     super()
     this.state = {
-      isFetching: true,
       status: '',
+      isFetching: true,
     }
   }
 
   getRandomStatus = () => {
-    content.getEntries({
-      content_type: 'state',
-      order: '-sys.createdAt',
-      limit: 3,
-    })
-    .then((entries) => {
-      const entryRand = Math.floor(Math.random() * 3)
-      const entry = entries.items[entryRand]
-
-      this.setState({
-        status: ` ${entry.fields.content}`,
-        isFetching: false,
-      })
+    this.setState({
+      status: '',
+      isFetching: false,
     })
   }
 
@@ -46,8 +35,8 @@ class Home extends Component {
         </h1>
         { ' ' }
         <p className={ classes.data }>
-          I work at XING as a <strong>frontend engineer</strong> (although
-          I've spent more time working as a <strong>graphic designer</strong>)
+          Currently I work at XING as a <strong>frontend engineer</strong> (although
+          I did start my career as a <strong>graphic designer</strong>)
           { this.state.status }
           .
         </p>
