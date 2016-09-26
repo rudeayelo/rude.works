@@ -10,11 +10,13 @@ const styles = {
     },
   },
   logo: {
-    transform: 'scale(2.5)',
+    transform: 'scale(2)',
     transformOrigin: 'bottom center',
+    [breakpoints.s]: {
+      transformOrigin: 'center right',
+    },
     [breakpoints.m]: {
       transform: 'scale(3)',
-      transformOrigin: 'center right',
     },
   },
   RHead: {

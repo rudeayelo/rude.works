@@ -7,7 +7,7 @@ const styles = {
     position: 'relative',
     top: '50vh',
     transform: 'translateY(-55%)',
-    [breakpoints.m]: {
+    [breakpoints.s]: {
       flexDirection: 'row',
     },
   },
@@ -18,7 +18,7 @@ const styles = {
     flex: 1,
   },
   body: {
-    [breakpoints.mMax]: {
+    [breakpoints.sMax]: {
       paddingTop: 2,
       paddingBottom: 2,
     },
