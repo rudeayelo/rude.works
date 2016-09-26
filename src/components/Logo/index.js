@@ -3,13 +3,13 @@ import injectSheet from 'styles/jss'
 import { breakpoints, colors } from 'styles/config'
 
 const styles = {
-  logo: {
+  container: {
     textAlign: 'center',
     [breakpoints.s]: {
       paddingRight: 3,
     },
   },
-  img: {
+  logo: {
     transform: 'scale(2.5)',
     transformOrigin: 'bottom center',
     [breakpoints.m]: {
@@ -18,22 +18,26 @@ const styles = {
     },
   },
   RHead: {
-    mixBlendMode: 'difference',
+    // mixBlendMode: 'difference',
   },
   RLeg: {},
   RFoot: {},
+  RIntersect: {
+    // display: 'none',
+  },
 }
 
 const Logo = (props) => {
   const { classes } = props.sheet
 
   return (
-    <div className={ classes.logo }>
-      <svg className={ classes.img } xmlns='http://www.w3.org/2000/svg' width='250' viewBox='0 0 493 478' role='presentation'>
-        <g fill={ colors.blue } fillRule='evenodd'>
-          <path className={ classes.RFoot } d='M301.35 466.96a8.53 8.53 0 0 0 6.9 4.72L488.83 478c2.74.1 4.04-1.84 2.9-4.34L391.16 251.44a8.72 8.72 0 0 0-7-4.69l-175.32-6.12c-2.74-.1-4.08 1.86-3 4.38l95.52 221.95z'/>
-          <path className={ classes.RLeg } d='M4.95 15.94a4.95 4.95 0 0 0-4.77 5.12l15.03 430.5a4.95 4.95 0 0 0 5.12 4.78l168.05-5.87a4.95 4.95 0 0 0 4.77-5.12l-15.03-430.5a4.95 4.95 0 0 0-5.12-4.78L4.95 15.94z'/>
-          <path className={ classes.RHead } d='M284.11 326.92H76.55a4.95 4.95 0 0 1-4.96-4.96v-317C71.6 2.22 73.8 0 76.55 0H284.1c155.07 0 204.82 47.17 205.26 157.83-.44 112.44-50.2 169.09-205.26 169.09z'/>
+    <div className={ classes.container }>
+      <svg className={ classes.logo } width='250' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 493 479'>
+        <g fill='none' fillRule='evenodd'>
+          <path className={ classes.RFoot } fill={ colors.blue } d='M301.33 467.9a8.6 8.6 0 0 0 6.97 4.77l180.47 6.3c2.76.1 4.07-1.86 2.94-4.37L391.17 251.99a8.8 8.8 0 0 0-7.06-4.73l-175.23-6.12c-2.76-.1-4.12 1.88-3.02 4.43l95.47 222.33z'/>
+          <path className={ classes.RLeg } fill={ colors.blue } d='M4.98 15.96a5 5 0 0 0-4.82 5.17l15.06 431.33a5 5 0 0 0 5.17 4.82l167.96-5.86a5 5 0 0 0 4.81-5.17L178.1 14.92a5 5 0 0 0-5.17-4.82L4.98 15.96z'/>
+          <path className={ classes.RHead } fill={ colors.blue } d='M284.11 327.6H76.58a5 5 0 0 1-4.99-5V5a5 5 0 0 1 5-5H284.1c155.07 0 204.82 47.27 205.26 158.16-.44 112.68-50.2 169.44-205.26 169.44z'/>
+          <path className={ classes.RIntersect } fill={ colors.blueDarkest } d='M415 304.73L391.16 252a8.8 8.8 0 0 0-7.06-4.73l-175.23-6.12c-2.76-.1-4.12 1.88-3.02 4.43l35.22 82.03h43.03c56.88 0 99.58-7.64 130.88-22.87zM189.01 327.6L178.1 14.92a5 5 0 0 0-5.17-4.82L71.6 13.64V322.6a5 5 0 0 0 5 5h112.43z'/>
         </g>
       </svg>
     </div>

@@ -36,7 +36,7 @@ class Home extends Component {
         { ' ' }
         <p className={ classes.data }>
           Currently I work at XING as a <strong>frontend engineer</strong> (although
-          I did start my career as a <strong>graphic designer</strong>)
+          I started my career as a <strong>graphic designer</strong>)
           { this.state.status }
           .
         </p>
