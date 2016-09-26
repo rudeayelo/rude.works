@@ -1,15 +1,10 @@
 import { create as createJss } from 'jss'
 import { create as createInjectSheet  } from 'react-jss'
-import nested from 'jss-nested'
-import camelCase from 'jss-camel-case'
-import defaultUnit from 'jss-default-unit'
-import vendorPrefixer from 'jss-vendor-prefixer'
+import preset from 'jss-preset-default'
 
 export const jss = createJss()
-jss.use(
-  nested(),
-  camelCase(),
-  defaultUnit({
+jss.setup(preset({
+  defaultUnit: {
     'font-size': 'em',
     'padding': 'em',
     'padding-right': 'em',
@@ -24,9 +19,8 @@ jss.use(
     'width': 'em',
     'height': 'em',
     'max-width': '%',
-  }),
-  vendorPrefixer()
-)
+  },
+}))
 
 const injectSheet = createInjectSheet(jss)
 
