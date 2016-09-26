@@ -19,8 +19,8 @@ const styles = {
   },
   body: {
     [breakpoints.mMax]: {
-      paddingTop: '2em',
-      paddingBottom: '2em',
+      paddingTop: 2,
+      paddingBottom: 2,
     },
   },
   intro: {
