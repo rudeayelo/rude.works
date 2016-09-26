@@ -21,6 +21,7 @@
     "build": "NODE_PATH='./src' react-scripts build",
     "test": "NODE_PATH='./src'react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "surge build rude.works"
   }
 }
