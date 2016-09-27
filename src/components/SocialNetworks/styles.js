@@ -3,22 +3,22 @@ import { colors, font } from 'styles/config'
 const styles = {
   social: {
     position: 'relative',
-    '::before': {
+    '&::before': {
       content: '""',
       position: 'absolute',
       top: 0,
       left: 0,
-      width: '4em',
-      height: 2,
-      background: colors.grey,
+      width: 4,
+      height: '2px',
+      background: colors.greyLighter,
     },
   },
   heading: {
     display: 'block',
-    paddingTop: '1.5em',
-    paddingBottom: '.55em',
-    fontSize: '.8em',
-    color: colors.greyLight,
+    paddingTop: 1.5,
+    paddingBottom: 0.55,
+    fontSize: 0.8,
+    color: colors.blueDarkest,
     textTransform: 'uppercase',
     fontWeight: font.weight.semibold,
   },
@@ -30,11 +30,10 @@ const styles = {
   },
   item: {
     display: 'inline-block',
-    marginRight: '1em',
+    marginRight: 1,
   },
   link: {
     fontSize: font.size.base,
-    color: colors.blue
   },
 }
 

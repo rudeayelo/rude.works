@@ -1,13 +1,3 @@
-import * as sanitize from 'sanitize.css'
-import * as fontFace from 'styles/base/font-face.css'
-import * as reset from 'styles/base/reset.css'
-import config from './config'
-
-const styles = {
-  sanitize,
-  fontFace,
-  reset,
-  config,
-}
-
-export default styles
+import 'styles/base/font-face'
+import 'styles/base/reset'
+import 'styles/base/base'

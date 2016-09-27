@@ -1,8 +1,3 @@
-import Color from 'color'
-
-export const darken = (c, d) => Color(c).darken(d).rgbString()
-export const alpha = (c, a) => Color(c).alpha(a).rgbString()
-
 export const font = {
   family: {
     sans: '"Source Sans Pro", "Helvetica Neue", Arial, sans',
