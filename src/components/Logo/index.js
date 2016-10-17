@@ -19,6 +19,7 @@ const R = styled.svg`
     transform: scale(3);
   }
 `
+R.displayName = 'R'
 
 const RFoot = styled.path`fill: ${colors.blue};`
 const RLeg = styled.path`fill: ${colors.blue};`
