@@ -35,8 +35,8 @@ const IntroStyles = `
   font-size: ${font.size.base};
   font-weight: ${font.weight.regular};
 `
-const Intro = styled.h1`${IntroStyles}`
-const Data = styled.p`${IntroStyles}`
+const IntroH1 = styled.h1`${IntroStyles}`
+const IntroP = styled.p`${IntroStyles}`
 
 class Home extends Component {
   constructor () {
@@ -61,16 +61,16 @@ class Home extends Component {
   renderBody = () => {
     return (
       <Body>
-        <Intro>
+        <IntroH1>
           <strong>Hello</strong>, my name is <strong>Rude</strong>.
-        </Intro>
+        </IntroH1>
         { ' ' }
-        <Data>
+        <IntroP>
           Currently I work at XING as a <strong>frontend engineer</strong> (although
           I started my career as a <strong>graphic designer</strong>)
           { this.state.status }
           .
-        </Data>
+        </IntroP>
       </Body>
     )
   }
@@ -82,7 +82,7 @@ class Home extends Component {
           <Logo/>
           <Main>
             { this.state.isFetching
-                ? <Data>Loading...</Data>
+                ? <IntroP>Loading...</IntroP>
                 : this.renderBody() }
             <SocialNetworks/>
           </Main>
