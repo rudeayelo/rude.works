@@ -1,9 +1,47 @@
 import React, { Component } from 'react'
-import injectSheet from 'styles/jss'
+import styled from 'styled-components'
 import Logo from 'components/Logo'
-import Wrap from 'components/Wrap'
+import { WrapCenter } from 'components/Wrap'
 import SocialNetworks from 'components/SocialNetworks'
-import styles from './styles'
+import { breakpoints, font } from 'styles/config'
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 50vh;
+  transform: translateY(-55%);
+  ${breakpoints.s} {
+    flex-direction: row;
+  }
+`
+Container.displayName = 'HomeContainer'
+
+const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+`
+Main.displayName = 'Main'
+
+const Body = styled.div`
+  ${breakpoints.sMax} {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+`
+Body.displayName = 'Body'
+
+const IntroStyles = `
+  display: inline;
+  font-size: ${font.size.base};
+  font-weight: ${font.weight.regular};
+`
+const IntroH1 = styled.h1`${IntroStyles}`
+const IntroP = styled.p`${IntroStyles}`
+IntroH1.displayName = 'IntroH1'
+IntroP.displayName = 'IntroP'
 
 class Home extends Component {
   constructor () {
@@ -26,43 +64,37 @@ class Home extends Component {
   }
 
   renderBody = () => {
-    const { classes } = this.props.sheet
-
     return (
-      <div className={ classes.body }>
-        <h1 className={ classes.intro }>
+      <Body>
+        <IntroH1>
           <strong>Hello</strong>, my name is <strong>Rude</strong>.
-        </h1>
+        </IntroH1>
         { ' ' }
-        <p className={ classes.data }>
+        <IntroP>
           Currently I work at XING as a <strong>frontend engineer</strong> (although
           I started my career as a <strong>graphic designer</strong>)
           { this.state.status }
           .
-        </p>
-      </div>
+        </IntroP>
+      </Body>
     )
   }
 
   render () {
-    const { classes } = this.props.sheet
-
     return (
-      <Wrap>
-        <div className={ classes.content }>
+      <WrapCenter>
+        <Container>
           <Logo/>
-
-          <div className={ classes.main }>
+          <Main>
             { this.state.isFetching
-                ? <span className={ classes.data }>Loading...</span>
+                ? <IntroP>Loading...</IntroP>
                 : this.renderBody() }
-
             <SocialNetworks/>
-          </div>
-        </div>
-      </Wrap>
+          </Main>
+        </Container>
+      </WrapCenter>
     )
   }
 }
 
-export default injectSheet(styles)(Home)
+export default Home
