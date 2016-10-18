@@ -15,7 +15,7 @@ const Container = styled.footer`
     background: ${colors.greyLighter};
   }
 `
-Container.displayName = 'Container'
+Container.displayName = 'SocialNetworksContainer'
 
 const Heading = styled.h2`
   display: block;

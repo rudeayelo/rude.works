@@ -8,6 +8,7 @@ const Container = styled.div`
     padding-right: 3em;
   }
 `
+Container.displayName = 'LogoContainer'
 
 const R = styled.svg`
   transform: scale(2);

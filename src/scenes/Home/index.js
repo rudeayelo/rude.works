@@ -15,7 +15,7 @@ const Container = styled.div`
     flex-direction: row;
   }
 `
-Container.displayName = 'Container'
+Container.displayName = 'HomeContainer'
 
 const Main = styled.div`
   display: flex;
