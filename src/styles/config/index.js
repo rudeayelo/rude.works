@@ -34,7 +34,7 @@ export const animations = {
   spring: 'cubic-bezier(0.02, 0.145, 0.3, 1.4)',
 }
 
-export const wrap = {
+export const layout = {
   maxWidth: '50rem',
   padding: '2rem',
 }
@@ -54,7 +54,7 @@ const config = {
   colors,
   breakpoints,
   animations,
-  wrap,
+  layout,
   zIndex,
 }
 

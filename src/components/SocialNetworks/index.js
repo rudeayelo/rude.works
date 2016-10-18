@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ReactGA from 'react-ga'
-import { colors, font } from 'styles/config'
+import { colors, font, animations } from 'styles/config'
 
 const Container = styled.footer`
   position: relative;
@@ -32,6 +32,7 @@ Heading.displayName = 'Heading'
 
 const List = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding-left: 0;
   list-style: none;
@@ -45,16 +46,37 @@ const ListItem = styled.li`
 ListItem.displayName = 'ListItem'
 
 const Link = styled(ReactGA.OutboundLink)`
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
   font-weight: ${font.weight.medium};
   user-select: none;
+  transition: color 400ms ${animations.default};
+  &:hover {
+    color: ${colors.blueDarkest};
+
+    &::after {
+      transform: translateX(200%);
+      transition: transform 400ms ${animations.default};
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+  }
 `
 Link.displayName = 'Link'
 
 const SocialNetworks = (props) => {
   const socialLinks = [
-    { name: 'Twitter', url: 'http://rude.at/twitter' },
+    { name: 'Twitter',  url: 'http://rude.at/twitter' },
     { name: 'Dribbble', url: 'http://rude.at/dribbble' },
-    { name: 'XING', url: 'http://rude.at/xing' },
+    { name: 'XING',     url: 'http://rude.at/xing' },
     { name: 'Linkedin', url: 'http://rude.at/linkedin' },
   ]
 

@@ -1,21 +1,49 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
 import Logo from 'components/Logo'
-import { WrapCenter } from 'components/Wrap'
 import SocialNetworks from 'components/SocialNetworks'
-import { breakpoints, font } from 'styles/config'
+import { breakpoints, font, layout } from 'styles/config'
+
+injectGlobal`
+  #root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 100vh;
+    overflow: hidden;
+    ${breakpoints.s} {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+`
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 50vh;
-  transform: translateY(-55%);
+  padding-left: ${layout.padding};
+  padding-right: ${layout.padding};
   ${breakpoints.s} {
     flex-direction: row;
+    max-width: ${layout.maxWidth};
   }
 `
 Container.displayName = 'HomeContainer'
+
+const LogoContainer = styled.div`
+  text-align: center;
+  ${breakpoints.sMax} {
+    padding-bottom: 2em;
+  }
+  ${breakpoints.s} {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 3em;
+  }
+`
+LogoContainer.displayName = 'LogoContainer'
 
 const Main = styled.div`
   display: flex;
@@ -25,12 +53,7 @@ const Main = styled.div`
 `
 Main.displayName = 'Main'
 
-const Body = styled.div`
-  ${breakpoints.sMax} {
-    padding-top: 2em;
-    padding-bottom: 2em;
-  }
-`
+const Body = styled.div` padding-bottom: 2em; `
 Body.displayName = 'Body'
 
 const IntroStyles = `
@@ -82,17 +105,17 @@ class Home extends Component {
 
   render () {
     return (
-      <WrapCenter>
-        <Container>
+      <Container>
+        <LogoContainer>
           <Logo/>
-          <Main>
-            { this.state.isFetching
-                ? <IntroP>Loading...</IntroP>
-                : this.renderBody() }
-            <SocialNetworks/>
-          </Main>
-        </Container>
-      </WrapCenter>
+        </LogoContainer>
+        <Main>
+          { this.state.isFetching
+              ? <IntroP>Loading...</IntroP>
+              : this.renderBody() }
+          <SocialNetworks/>
+        </Main>
+      </Container>
     )
   }
 }
