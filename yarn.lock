@@ -1431,12 +1431,6 @@ css-selector-tokenizer@^0.6.0:
     fastparse "^1.1.1"
     regexpu-core "^1.0.0"
 
-css-vendor@^0.3.4:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/css-vendor/-/css-vendor-0.3.5.tgz#4fedc24a406111c34be0b326d7d9c4d36d486dc8"
-  dependencies:
-    is-browser "^2.0.1"
-
 css-what@2.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
@@ -2398,10 +2392,6 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-hoist-non-react-statics@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
-
 home-or-tmp@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-1.0.0.tgz#4b9f1e40800c3e50c6c27f781676afcce71f3985"
@@ -2611,10 +2601,6 @@ is-binary-path@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-binary-path/-/is-binary-path-1.0.1.tgz#75f16642b480f187a711c814161fd3a4a7655898"
   dependencies:
     binary-extensions "^1.0.0"
-
-is-browser@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/is-browser/-/is-browser-2.0.1.tgz#8bf0baf799a9c62fd9de5bcee4cf3397c3e7529a"
 
 is-buffer@^1.0.2:
   version "1.1.4"
@@ -3160,60 +3146,6 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.3.6"
 
-jss-camel-case@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/jss-camel-case/-/jss-camel-case-2.0.0.tgz#735f867a9e1ea41bfdf80ef90bf0ac3dfeb16d0d"
-
-jss-compose@^1.0.1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/jss-compose/-/jss-compose-1.1.0.tgz#e07e1c5dc881164ce261f4f2c3b53c755fa31ca4"
-  dependencies:
-    warning "^3.0.0"
-
-jss-default-unit@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/jss-default-unit/-/jss-default-unit-4.0.1.tgz#5e681b433e70d50c4e78c366c5553650ecfb0cc3"
-
-jss-extend@^2.0.1:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/jss-extend/-/jss-extend-2.0.2.tgz#051ff0b747eb025e6770172cadad7375112d806c"
-
-jss-nested@^2.4.0:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/jss-nested/-/jss-nested-2.4.3.tgz#c248b926a1be1009438bc05f50a4a88f4ec216da"
-  dependencies:
-    warning "^3.0.0"
-
-jss-preset-default@^0.5.0, jss-preset-default@0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/jss-preset-default/-/jss-preset-default-0.5.0.tgz#b83c3262df756e7a4a9bda754d2f0c53d752bd0b"
-  dependencies:
-    jss-camel-case "^2.0.0"
-    jss-compose "^1.0.1"
-    jss-default-unit "^4.0.1"
-    jss-extend "^2.0.1"
-    jss-nested "^2.4.0"
-    jss-props-sort "^2.0.0"
-    jss-vendor-prefixer "^3.0.0"
-
-jss-props-sort@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/jss-props-sort/-/jss-props-sort-2.0.0.tgz#5bfa7a409c3ec69e73499fe5101760977954ff6d"
-
-jss-vendor-prefixer@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/jss-vendor-prefixer/-/jss-vendor-prefixer-3.0.0.tgz#387195557526acf6908c2cb7f5353ae2bb689731"
-  dependencies:
-    css-vendor "^0.3.4"
-
-jss@^5.5.5, jss@5.5.5:
-  version "5.5.5"
-  resolved "https://registry.yarnpkg.com/jss/-/jss-5.5.5.tgz#5f7bc59106b5fba1664e3c44d59e07e711784003"
-  dependencies:
-    is-browser "^2.0.1"
-    murmurhash-js "^1.0.0"
-    warning "^3.0.0"
-
 jsx-ast-utils@^1.0.0, jsx-ast-utils@^1.3.1:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.3.2.tgz#dff658782705352111f9865d40471bc4a955961e"
@@ -3561,10 +3493,6 @@ multimatch@^2.1.0:
     array-union "^1.0.1"
     arrify "^1.0.0"
     minimatch "^3.0.0"
-
-murmurhash-js@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/murmurhash-js/-/murmurhash-js-1.0.0.tgz#b06278e21fc6c37fa5313732b0412bcb6ae15f51"
 
 mute-stream@0.0.5:
   version "0.0.5"
@@ -4321,14 +4249,6 @@ react-ga@2.1.2:
   dependencies:
     object-assign "^4.0.1"
 
-react-jss@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-jss/-/react-jss-4.1.1.tgz#fbe70ad6498c48f32c639b4c2a7c5802cd2b6f40"
-  dependencies:
-    hoist-non-react-statics "^1.2.0"
-    jss "^5.5.5"
-    jss-preset-default "^0.5.0"
-
 react-scripts@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-0.6.1.tgz#526cc472ae0c0de6bc4fdcbb198af2a62c6d4671"
@@ -4651,6 +4571,10 @@ sane@~1.4.1:
     minimist "^1.1.1"
     walker "~1.0.5"
     watch "~0.10.0"
+
+sanitize.css:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/sanitize.css/-/sanitize.css-4.1.0.tgz#0bafc3c513699f2fe8c7980c6d37edf21d3f5448"
 
 sax@^1.1.4, sax@~1.2.1:
   version "1.2.1"
@@ -5239,12 +5163,6 @@ walker@~1.0.5:
   resolved "https://registry.yarnpkg.com/walker/-/walker-1.0.7.tgz#2f7f9b8fd10d677262b18a884e28d19618e028fb"
   dependencies:
     makeerror "1.0.x"
-
-warning@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
-  dependencies:
-    loose-envify "^1.0.0"
 
 watch@~0.10.0:
   version "0.10.0"
