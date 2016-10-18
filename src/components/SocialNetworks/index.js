@@ -19,6 +19,7 @@ Container.displayName = 'Container'
 
 const Heading = styled.h2`
   display: block;
+  margin-bottom: 0;
   padding-top: 1.5em;
   padding-bottom: 0.55em;
   font-size: 0.8rem;

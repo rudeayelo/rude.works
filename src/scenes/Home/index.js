@@ -15,6 +15,7 @@ const Container = styled.div`
     flex-direction: row;
   }
 `
+Container.displayName = 'Container'
 
 const Main = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ const Main = styled.div`
   justify-content: space-around;
   flex: 1;
 `
+Main.displayName = 'Main'
 
 const Body = styled.div`
   ${breakpoints.sMax} {
@@ -29,6 +31,7 @@ const Body = styled.div`
     padding-bottom: 2em;
   }
 `
+Body.displayName = 'Body'
 
 const IntroStyles = `
   display: inline;
@@ -37,6 +40,8 @@ const IntroStyles = `
 `
 const IntroH1 = styled.h1`${IntroStyles}`
 const IntroP = styled.p`${IntroStyles}`
+IntroH1.displayName = 'IntroH1'
+IntroP.displayName = 'IntroP'
 
 class Home extends Component {
   constructor () {
