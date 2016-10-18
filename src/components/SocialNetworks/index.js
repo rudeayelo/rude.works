@@ -23,9 +23,10 @@ const Heading = styled.h2`
   padding-top: 1.5em;
   padding-bottom: 0.55em;
   font-size: 0.8rem;
-  color: ${colors.blueDarkest};
+  color: ${colors.grey};
   text-transform: uppercase;
-  font-weight: ${font.weight.semibold};
+  font-weight: ${font.weight.medium};
+  user-select: none;
 `
 Heading.displayName = 'Heading'
 
@@ -43,6 +44,12 @@ const ListItem = styled.li`
 `
 ListItem.displayName = 'ListItem'
 
+const Link = styled(ReactGA.OutboundLink)`
+  font-weight: ${font.weight.medium};
+  user-select: none;
+`
+Link.displayName = 'Link'
+
 const SocialNetworks = (props) => {
   const socialLinks = [
     { name: 'Twitter', url: 'http://rude.at/twitter' },
@@ -58,9 +65,9 @@ const SocialNetworks = (props) => {
         { socialLinks.map((link) => {
           return (
             <ListItem key={ link.name.toLowerCase() }>
-              <ReactGA.OutboundLink eventLabel={ link.name } to={ link.url }>
+              <Link eventLabel={ link.name } to={ link.url }>
                 { link.name }
-              </ReactGA.OutboundLink>
+              </Link>
             </ListItem>
           )
         })}

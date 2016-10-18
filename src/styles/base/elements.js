@@ -11,10 +11,11 @@ injectGlobal`
 
   a:link, a:visited, a:hover, a:focus, a:active {
     color: ${colors.blue};
+    text-decoration: none;
   }
 
   strong {
-    font-weight: ${font.weight.semibold};
+    font-weight: ${font.weight.medium};
   }
 
   img {

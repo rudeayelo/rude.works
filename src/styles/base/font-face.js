@@ -1,19 +1,13 @@
 import { injectGlobal } from 'styled-components'
-import LightWoff from 'styles/fonts/SourceSansPro-Light.woff'
-import LightWoff2 from 'styles/fonts/SourceSansPro-Light.woff2'
-import RegularWoff from 'styles/fonts/SourceSansPro-Regular.woff'
-import RegularWoff2 from 'styles/fonts/SourceSansPro-Regular.woff2'
-import SemiboldWoff from 'styles/fonts/SourceSansPro-Semibold.woff'
-import SemiboldWoff2 from 'styles/fonts/SourceSansPro-Semibold.woff2'
+import RegularWoff from 'styles/fonts/ATCYara-Regular.woff'
+import RegularWoff2 from 'styles/fonts/ATCYara-Regular.woff2'
+import MediumWoff from 'styles/fonts/ATCYara-Medium.woff'
+import MediumWoff2 from 'styles/fonts/ATCYara-Medium.woff2'
+import BoldWoff from 'styles/fonts/ATCYara-Bold.woff'
+import BoldWoff2 from 'styles/fonts/ATCYara-Bold.woff2'
 
 const FontFaceName = 'Source Sans Pro'
 const FontFaceDefs = [
-  {
-    style: 'normal',
-    weight: 300,
-    woff: LightWoff,
-    woff2: LightWoff2,
-  },
   {
     style: 'normal',
     weight: 400,
@@ -23,8 +17,14 @@ const FontFaceDefs = [
   {
     style: 'normal',
     weight: 500,
-    woff: SemiboldWoff,
-    woff2: SemiboldWoff2,
+    woff: MediumWoff,
+    woff2: MediumWoff2,
+  },
+  {
+    style: 'normal',
+    weight: 600,
+    woff: BoldWoff,
+    woff2: BoldWoff2,
   },
 ]
 

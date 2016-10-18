@@ -6,9 +6,8 @@ export const font = {
     base: '1.1em',
   },
   weight: {
-    light: '300',
     regular: '400',
-    semibold: '500',
+    medium: '500',
   },
 }
 

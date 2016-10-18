@@ -67,11 +67,11 @@ class Home extends Component {
     return (
       <Body>
         <IntroH1>
-          <strong>Hello</strong>, my name is <strong>Rude</strong>.
+          <strong>Hi</strong>, my name is <strong>Rude</strong>.
         </IntroH1>
         { ' ' }
         <IntroP>
-          Currently I work at XING as a <strong>frontend engineer</strong> (although
+          Currently I'm working as a <strong>frontend engineer</strong> at XING (although
           I started my career as a <strong>graphic designer</strong>)
           { this.state.status }
           .
