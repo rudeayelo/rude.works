@@ -7,11 +7,12 @@ const R = styled.svg`
   transform: scale(2);
   transform-origin: bottom center;
   ${breakpoints.s} {
+    width: 9.5em;
     transform: scale(2.5);
     transform-origin: center right;
   }
   ${breakpoints.m} {
-    min-width: 15.5em;
+    width: 15.5em;
     transform: scale(3);
   }
 `
