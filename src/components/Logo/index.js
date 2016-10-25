@@ -18,12 +18,12 @@ const R = styled.svg`
 `
 R.displayName = 'R'
 
-const RFoot = styled.path`fill: ${colors.blue};`
-const RLeg = styled.path`fill: ${colors.blue};`
-const RHead = styled.path`fill: ${colors.blue};`
-const RIntersect = styled.path`fill: ${colors.blueDarkest};`
+const RFoot = styled.path` fill: ${colors.blue}; `
+const RLeg = styled.path` fill: ${colors.blue}; `
+const RHead = styled.path` fill: ${colors.blue}; `
+const RIntersect = styled.path` fill: ${colors.blueDarkest}; `
 
-const Logo = (props) => {
+const Logo = props => {
   return (
     <R xmlns='http://www.w3.org/2000/svg' viewBox='0 0 493 479'>
       <g fill='none' fillRule='evenodd'>

@@ -40,4 +40,4 @@ const defineFontFace = (FontFaceDefs) => (
   `))
 )
 
-injectGlobal`${ defineFontFace(FontFaceDefs) }`
+injectGlobal` ${ defineFontFace(FontFaceDefs) } `

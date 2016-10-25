@@ -9,7 +9,11 @@ injectGlobal`
     line-height: 1.5;
   }
 
-  a:link, a:visited, a:hover, a:focus, a:active {
+  a:link,
+  a:visited,
+  a:hover,
+  a:focus,
+  a:active {
     color: ${colors.blue};
     text-decoration: none;
   }

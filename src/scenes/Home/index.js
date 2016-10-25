@@ -67,25 +67,6 @@ IntroH1.displayName = 'IntroH1'
 IntroP.displayName = 'IntroP'
 
 class Home extends Component {
-  constructor () {
-    super()
-    this.state = {
-      status: '',
-      isFetching: true,
-    }
-  }
-
-  getRandomStatus = () => {
-    this.setState({
-      status: '',
-      isFetching: false,
-    })
-  }
-
-  componentDidMount () {
-    this.getRandomStatus()
-  }
-
   renderBody = () => {
     return (
       <Body>
@@ -95,9 +76,7 @@ class Home extends Component {
         { ' ' }
         <IntroP>
           Currently I'm working as a <strong>frontend engineer</strong> at XING (although
-          I started my career as a <strong>graphic designer</strong>)
-          { this.state.status }
-          .
+          I started my career as a <strong>graphic designer</strong>).
         </IntroP>
       </Body>
     )
@@ -110,9 +89,7 @@ class Home extends Component {
           <Logo/>
         </LogoContainer>
         <Main>
-          { this.state.isFetching
-              ? <IntroP>Loading...</IntroP>
-              : this.renderBody() }
+          { this.renderBody() }
           <SocialNetworks/>
         </Main>
       </Container>
