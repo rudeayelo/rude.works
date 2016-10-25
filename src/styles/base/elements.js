@@ -3,7 +3,7 @@ import { colors, font } from 'styles/config'
 
 injectGlobal`
   body {
-    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans;
+    font-family: ${font.family.sans};
     background: white;
     color: ${colors.blueDarkest};
     line-height: 1.5;

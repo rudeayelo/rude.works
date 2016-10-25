@@ -12,7 +12,10 @@
     "react-dom": "15.3.2",
     "react-ga": "2.1.2",
     "sanitize.css": "4.1.0",
-    "styled-components": "1.0.8"
+    "styled-components": "1.0.8",
+    "stylelint": "^7.5.0",
+    "stylelint-config-standard": "^14.0.0",
+    "stylelint-processor-styled-components": "^0.0.3"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -20,6 +23,7 @@
   "scripts": {
     "start": "NODE_PATH='./src' react-scripts start",
     "build": "NODE_PATH='./src' react-scripts build",
+    "lint:css": "stylelint './src/**/*.js'",
     "test": "NODE_PATH='./src' react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

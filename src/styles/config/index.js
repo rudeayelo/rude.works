@@ -1,6 +1,6 @@
 export const font = {
   family: {
-    sans: '"Source Sans Pro", "Helvetica Neue", Arial, sans',
+    sans: 'ATCYara, "Helvetica Neue", Arial, sans',
   },
   size: {
     base: '1.1em',

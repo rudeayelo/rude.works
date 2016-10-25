@@ -6,7 +6,7 @@ import MediumWoff2 from 'styles/fonts/ATCYara-Medium.woff2'
 import BoldWoff from 'styles/fonts/ATCYara-Bold.woff'
 import BoldWoff2 from 'styles/fonts/ATCYara-Bold.woff2'
 
-const FontFaceName = 'Source Sans Pro'
+const FontFaceName = 'ATCYara'
 const FontFaceDefs = [
   {
     style: 'normal',
